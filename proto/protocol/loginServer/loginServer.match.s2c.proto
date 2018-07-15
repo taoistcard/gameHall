@@ -1,0 +1,41 @@
+package loginServer.match.s2c;
+
+message matchSignUp				//0x000900
+{
+	enum RetCode {
+		RC_OK=0;						//报名成功
+		RC_USER_FULL=1; 				//报名人数已满
+		RC_MATCH_START=2;				//比赛已开始
+		RC_MATCH_FEE_NOT_ENOUGH=3;		//比赛报名费不足
+		RC_MATCH_NOT_SERVER=4;			//比赛服错误
+	}
+	required RetCode code=1;
+	optional string msg=2;
+}
+
+message userMatchInfo			//0x000901
+{
+	required int32 serverID=1;
+	required int32 tableID=2;
+	required int32 chairID=3;
+}
+
+
+message matchServerInfo
+{
+	enum StatusCode {
+		SC_SIGNUP=0;					//未报名
+		SC_SIGNUP_EXIST=1; 				//已报名
+	}
+
+	required int32 serverID=1;
+	required int32 totalUsers=2;	//累计报名人数
+	required int32 matchUsers=3;	//开赛人数条件
+	required int32 signUsers=4;		//当前报名人数
+	required StatusCode status=5;	//报名状态
+}
+
+message queryMatchServerInfo			//0x000902
+{
+	repeated matchServerInfo list=1;
+}

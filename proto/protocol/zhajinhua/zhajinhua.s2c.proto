@@ -1,0 +1,144 @@
+package zhajinhua.s2c;
+//sendgamescence 主协议号100
+//sendtableframe 主协议号200
+//新框架下协议号定义: 主协议*100000+子协议号
+//发牌数据包
+message CardData_Pro
+{
+	required int32 wChairID	= 1;//椅子ID
+	repeated int32 cbCardValue = 2;//牌信息
+}
+
+//游戏状态
+message CMD_S_StatusFree_Pro					//0x05000C
+{
+	required int64 lCellScore = 1;//基础积分
+}
+
+//游戏开始
+message CMD_S_GameStart_Pro						//0x050009
+{
+	//下注信息
+	required int64 lMaxScore = 1;//最大下注
+	required int64 lCellScore = 2;//单元下注
+	required int64 lCurrentTimes = 3;//当前倍数
+	required int64 lUserMaxScore = 4;//分数上限
+	//用户信息
+	required int32 wBankerUser = 5;//庄家用户
+	required int32 wCurrentUser = 6;//当前玩家
+}
+
+//用户下注
+message CMD_S_AddScore_Pro						//0x050000
+{
+	required int32 wCurrentUser = 1;//当前用户
+	required int32 wAddScoreUser = 2;//加注用户
+	required int32 wCompareState = 3;//比牌状态
+	required int64 lAddScoreCount = 4;//加注数目
+	required int64 lCurrentTimes = 5;//当前倍数
+}
+
+//用户放弃
+message CMD_S_GiveUp_Pro						//0x050002
+{
+	required int32 wGiveUpUser = 1;//放弃用户
+}
+
+//用户亮牌
+message CMD_S_ShowCared_Pro						//0x050008
+{
+	required int32 wShowUser = 1;//亮牌用户
+}
+
+//比牌数据包
+message CMD_S_CompareCard_Pro					//0x050003
+{
+	required int32 wCurrentUser	= 1;//当前用户
+	repeated int32 wCompareUser	= 2;//比牌用户
+	required int32 wLostUser = 3;//输牌用户
+}
+
+//看牌数据包
+message CMD_S_LookCard_Pro						//0x050004
+{
+	required int32 wLookCardUser = 1;//看牌用户
+	repeated int32 cbCardData = 2;//用户扑克
+}
+
+//游戏结束
+message CMD_S_GameEnd_Pro						//0x05000B
+{
+	required int64 lGameTax	= 1;//游戏税收
+	repeated int64 lGameScore = 2;//游戏得分
+	repeated CardData_Pro cbCardData = 3;//用户扑克
+	repeated CardData_Pro wCompareUser = 4;//比牌用户
+	required int32 wEndState = 5;//结束状态
+}
+
+//开牌数据包
+message CMD_S_OpenCard_Pro						//0x050005
+{
+	required int32 wWinner = 1;//胜利用户
+}
+
+//等待比牌
+message CMD_S_WaitCompare_Pro					//0x050006
+{
+	required int32 wCompareUser = 1;//比牌用户
+}
+//用户时钟
+message CMD_S_Clock_Pro							//0x05000A
+{
+	required int32 wTimerID	= 1;//时钟ID
+	required int32 wTimeOut	= 2;//超时时间 单位:秒
+	required int32 wTimeLeft = 3;//剩余时间 单位:秒
+	required int32 wCurrentUser	= 4;//当前用户
+}
+
+//游戏状态
+message CMD_S_StatusPlay_Pro					//0x05000D
+{
+	//加注信息
+	required int64 lMaxCellScore = 1;//单元上限
+	required int64 lCellScore = 2;//单元下注
+	required int64 lCurrentTimes = 3;//当前倍数
+	required int64 lUserMaxScore = 4;//用户分数上限
+
+	//状态信息
+	required int32 wBankerUser = 5;//庄家用户
+	required int32 wCurrentUser = 6;//当前玩家
+	repeated int32 cbPlayStatus = 7;//游戏状态
+	repeated int32 bMingZhu = 8;//看牌状态
+	repeated int64 lTableScore = 9;//下注数目
+
+	//扑克信息
+	repeated int32 cbHandCardData = 10;//扑克数据
+
+	//状态信息
+	required int32 bCompareState = 11;//比牌状态
+	repeated CardData_Pro wCompareUser = 12;//比牌用户							
+}
+
+//只有机器人收到的协议
+message CMD_S_GameInfo_Pro					//0x05000E
+{
+	required int32 winnerID = 1;//最终胜利玩家
+	required int32 openCheat = 2;//是否开启超级作弊
+	//扑克信息
+	repeated int32 cbHandCardData = 3;//扑克数据
+	repeated int32 cbPlayStatus = 4;//玩家状态
+}
+
+//比赛场全场比赛数据包
+message CMD_S_MatchCompare_Pro					//0x050010
+{
+	required int32 wLostUser = 1;//输牌用户
+}
+
+//下注信息
+message CMD_S_GameCellInfo				//0x050011
+{
+	required int64 lMaxCellScore = 1;//单元上限
+	required int64 lCellScore = 2;//单元下注
+	required int64 lCurrentTimes = 3;//当前倍数
+}

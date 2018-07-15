@@ -1,0 +1,26 @@
+package loginServer.message.s2c;
+
+message SystemLogonMessage {			//0x000300
+	message Item {
+		required uint32 id=1;
+		required uint32 type=2;			//0x01=Android, 0x02=IOS (0x03=Android | IOS)
+		required uint32 startTime=3;
+		required string msg=4;
+		optional uint32 kindID=5;
+	}
+	repeated Item list=1;
+}
+
+message UserLogonMessage {				//0x000301
+	message Item {
+		required uint32 id=1;
+		required uint32 startTime=2;
+		required string msg=3;
+	}
+	repeated Item list=1;
+}
+
+message ExchangeMessage					//0x000302
+{
+	repeated string msg=1;
+}

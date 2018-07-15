@@ -1,0 +1,24 @@
+package loginServer.tuijianren.c2s;
+
+// 0x000A00 上传推荐人
+message UpTuijianren
+{
+	optional int32 gameId = 1;
+	optional int32 kindId = 2;
+}
+
+
+// 0x000A01 进入推荐人系统
+message IntoTuijianren
+{
+}
+
+// 0x000A02 领取宝箱
+message RecvBox
+{
+}
+
+// 0x000A03 领取推荐人奖励
+message RecvScore
+{
+}

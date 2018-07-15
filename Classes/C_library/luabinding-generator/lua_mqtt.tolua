@@ -1,0 +1,17 @@
+$#include "mqttForLua.h"
+
+class mqttForLua : public Ref
+{
+    static mqttForLua* getInstance();
+   
+    void setListener(LUA_FUNCTION listener);
+
+    void create(const char *id);
+    void setIdentityVerification(const char *username, const char *password);
+    void connect(const char *host, int port);
+    void disconnect();
+    void subscribe(char* topic);
+    void unsubscribe(char* topic);
+    void sendMessage(char* topic, char* message);
+
+};

@@ -1,0 +1,14 @@
+$#include "SocketData.h"
+
+class CTCPSocketData : public Ref
+{
+static CTCPSocketData* create();
+unsigned char GetDataFlag();
+void SetDataFlag(unsigned char cbDataFlag);
+LUA_STRING GetDataBufferLua @ GetDataBuffer ();
+unsigned short GetBufferSize();
+void clearSocketData();
+bool SetBufferDataLua @ SetBufferData(LUA_FUNCTION listener,unsigned char * pcbBuffer, unsigned short wBufferSize);
+bool InitSocketData(unsigned short wMainCmdID, unsigned short wSubCmdID, unsigned char * pData, unsigned short wDataSize);
+
+};

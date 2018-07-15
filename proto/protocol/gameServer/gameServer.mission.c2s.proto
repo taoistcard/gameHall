@@ -1,0 +1,9 @@
+package gameServer.mission.c2s;
+
+// 查询池中礼券数量 / 最新礼券中奖玩家查询 / 最新玩家中奖次数查询
+message QueryVoucherInfo 				// 0x010802 /  0x010804 / 0x010805
+{
+	required int32				dwVoucherPoolType	= 1;		// 礼券池类型
+}
+
+

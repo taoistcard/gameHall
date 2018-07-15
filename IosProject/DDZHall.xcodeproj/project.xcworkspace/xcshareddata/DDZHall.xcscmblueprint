@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "73f44161-210b-4ddd-bc88-f67fc1ffe12a",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4F9C3602-E7A6-4430-BFCD-5E5154E33DD7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a" : "cocos_games\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DDZHall",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "client\/trunk\/NewHall\/IosProject\/DDZHall.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.188\/cocos_games",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73f44161-210b-4ddd-bc88-f67fc1ffe12a"
+    }
+  ]
+}

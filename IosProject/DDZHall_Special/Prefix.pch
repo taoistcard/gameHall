@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'Niuniu' target in the 'Niuniu' project
+//
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+	#import <UIKit/UIKit.h>
+#endif
+
+#define DOUNIUNIU
+#define WITH_THREADING
+//#define SERVICE_DOMAIN "98pk.net"
+#define SERVICE_DOMAIN "192.168.0.44:8001"
+//#define SERVICE_DOMAIN "service.game100.cn"
+#define ICON_SERVICE_DOMAIN "icon.game100.cn"

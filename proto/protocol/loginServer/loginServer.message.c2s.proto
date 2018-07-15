@@ -1,0 +1,6 @@
+package loginServer.message.c2s;
+
+message QueryExchangeMessage			//0x000302
+{
+
+}

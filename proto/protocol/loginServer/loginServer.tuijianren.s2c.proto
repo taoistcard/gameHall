@@ -1,0 +1,63 @@
+package loginServer.tuijianren.s2c;
+
+message UserInfo
+{
+	optional int32 kindId = 1;			//
+	optional int32 gameId = 2;			//
+	optional string name = 3;			//
+	optional int64 yesterdayScore = 4;	//
+	optional int64 totalScore = 5;		//
+}
+
+// 0x000A00
+message BackUpTuijianren
+{
+	enum RetCode {
+		RC_OK=0;
+		RC_INVALID_ID=1;				//
+		RC_INVALID_REGISTER_DATE = 2;	//
+		RC_INVALID_BETWEEN_DATE = 3;	//
+		RC_EXIST = 4;					//
+		RC_OTHER = 5;					//
+	}
+	optional RetCode code = 1;			//
+	optional string name = 2;			//
+	optional int32 gameId = 3;			//
+}
+
+// 0x000A01
+message BackIntoTuijianren
+{
+	optional int64 score = 1;			//
+	optional int32 boxType = 2;			//
+	optional int32 boxPercent = 3;		//
+	optional int32 date = 4;			//
+	repeated UserInfo userInfo = 5;
+	optional int32 tjrId = 6;			//
+	optional string tjrName = 7;		//
+}
+
+// 0x000A02
+message BackRecvBox
+{
+	enum RetCode {
+		RC_OK = 0;
+		RC_OTHER = 1;					//
+		RC_ERROR = 2;					//
+	}
+	optional RetCode code = 1;			//
+	optional int32 boxType = 2;			//
+	optional int32 boxPercent = 3;		//
+	optional int32 rewardNum = 4;		//
+}
+
+// 0x000A03
+message BackRecvScore
+{
+	enum RetCode {
+		RC_OK = 0;
+		RC_OTHER = 1;					//
+	}
+	optional RetCode code = 1;			//
+	optional int64 score = 2;			//
+}

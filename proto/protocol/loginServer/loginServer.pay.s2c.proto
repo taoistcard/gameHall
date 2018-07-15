@@ -1,0 +1,133 @@
+package loginServer.pay.s2c;
+
+message PayOrderItem
+{
+	required uint32 id=1;
+	required float price=2;
+	required uint32 gold=3;
+	required uint32 goldExtra=4;
+	required uint32 limitTimes=5;
+	required uint32 limitDays=6;
+	required bool isRecommend=7;
+	required bool isPepeatable=8;
+	required int32 startSecond=9;
+	required int32 endSecond=10;
+	required uint32 memberOrder=11;
+	required uint32 memberOrderDays=12;
+	required string name=13;
+	required uint32 availableTimes=14;
+}
+
+message QueryPayOrderItem					//0x000500
+{
+	repeated PayOrderItem list=1;
+}
+
+message PaymentNotify						//0x000501
+{
+	required string orderID=1;
+	required string currencyType=2;
+	required float currencyAmount=3;
+	required int32 payID=4;
+	required int32 score=5;
+	required int32 memberOrder=6;
+	required uint32 userRight=7;
+	required int64 currentScore=8;
+	required int64 currentInsure=9;
+}
+
+message FreeTime
+{
+	optional int32 beginHour = 1;	//
+	optional int32 endHour = 2;		//(1-24)
+	optional int32 num = 3;			//
+}
+
+// 0x000502
+message BackQueryFreeScore
+{
+	optional int32 limitScore = 1;		//
+	optional int32 freeScore = 2;		//
+	repeated FreeTime freeTime = 3;		//
+	optional int32 recvNum = 4;			//
+	optional int32 nowTime = 5;			//
+}
+
+// 0x000503
+message BackGetFreeScore
+{
+	enum RetCode {
+		RC_OK = 0;						//
+		RC_OTHER = 1;					//
+		RC_TIME_ERROR = 2;				//
+		RC_LIMITNUM_ERROR = 3;			//
+		RC_LIMITSCORE_ERROR = 4;		//
+	}
+	optional RetCode code = 1;
+	optional int64 score = 2;			//
+}
+
+message VipFreeScore
+{
+	optional int32 id = 1;			//vip
+	optional int64 freeScore = 2;	//
+}
+
+// 0x000504 
+message BackQueryVipFreeScore
+{
+	repeated VipFreeScore vipFreeScore = 1;
+	optional int32 recvState = 2;		//
+	optional int32 nowTime = 3;			//
+}
+
+// 0x000505
+message BackGetVipFreeScore
+{
+	enum RetCode {
+		RC_OK = 0;						//
+		RC_OTHER = 1;					//
+		RC_LIMITNUM_ERROR = 2;			//
+		RC_CONDITION_ERROR = 3;			//
+	}
+	optional RetCode code = 1;
+	optional int64 score = 2;			//
+}
+
+// 0x000506
+message BackGetGiftScore
+{
+	enum RetCode {
+		RC_OK = 0;						//
+		RC_OTHER = 1;					//
+	}
+	optional RetCode code = 1;
+	optional int64 gift = 2;			//
+	optional int64 score = 3;			//
+}
+
+message VipInfo
+{
+	optional int32 id = 1;			//
+	optional int32 overDate = 2;	//
+}
+
+// 0x000507
+message BackQueryVipInfo
+{
+	repeated VipInfo vipInfo = 1;
+	optional int32 nowTime = 2;			//
+}
+
+// 0x000508
+message RefreshGift
+{
+	optional int32 gift = 1;			//
+}
+
+// 0x000509
+message RefreshLoveliness
+{
+	optional int32 loveliness = 1;		//
+	optional int64 score = 2;			//
+}

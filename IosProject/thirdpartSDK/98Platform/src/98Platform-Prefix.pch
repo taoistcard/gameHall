@@ -1,0 +1,13 @@
+//
+// Prefix header for all source files of the 'CYFramework' target in the 'CYFramework' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+#ifndef DEBUGLIB
+#define NSLog(...) {}
+#else
+#define NSLog(...) NSLog(__VA_ARGS__)
+#endif

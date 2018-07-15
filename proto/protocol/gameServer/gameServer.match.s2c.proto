@@ -1,0 +1,12 @@
+package gameServer.match.s2c;
+
+message userRanking {					//0x010600
+	required int32 ranking=1;
+	optional int32 userID=2;
+}
+
+message matchInfo {						//0x010601
+	required int32 myRanking = 1;//我的排名
+	required int32 userCount = 2;//用户数量
+	required int32 gameTime = 3;//游戏开始时间
+}

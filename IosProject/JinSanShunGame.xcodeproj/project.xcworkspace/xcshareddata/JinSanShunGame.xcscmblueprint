@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AB62E68C-5127-471E-BB2B-B3CE80614D5A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261" : "client\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "JinSanShunGame",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/NewHall\/IosProject\/JinSanShunGame.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.188\/cocos_games",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261"
+    }
+  ]
+}

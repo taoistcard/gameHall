@@ -1,0 +1,34 @@
+package doudizhu.c2s;
+
+//////////////////////////////////////////////////////////////////////////////////
+//命令定义 C-S
+
+//用户投注
+message CMD_C_VoucherBetting_Pro
+{
+	required int32							cbIsBet 		= 1;			//是否投注
+}
+
+//用户叫分
+message CMD_C_CallScore_Pro
+{
+	required int32							cbCallScore 		= 1;			//叫分数目
+}
+
+//用户出牌
+message CMD_C_OutCard_Pro
+{
+	required int32							cbCardCount 		= 1;			//出牌数目
+	repeated int32							cbCardData 		= 2;			//扑克数据
+}
+
+//托管
+message CMD_C_TuoGuan_Pro
+{
+	required int32							bTuoGuan 		= 1;			//托管状态 1表示托管、0表示未托管
+}
+
+
+//通用协议，用于客户端无内容请求
+message CMD_C_Common_Pro
+{}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">扎金花</string>
+    <string name="channel">a_01</string>
+    <string name="channel_name">Test Channel</string>
+    <string name="AppId">1032</string>
+    <string name="AppKey">94245cfc0a8be029d52454f08f81976c</string>
+    <string name="AppServer">2</string>
+    
+    <!--UMeng  -->
+    <string name="UMENG_APPKEY">5658287f67e58ebac50017bf</string>
+    <string name="UMENG_MESSAGE_SECRET">e9d3483aae154462c300eaee04a0de67</string>
+       
+    
+    <!--Tecent -->
+    <string name="QQ_AppId">ID1105051083</string>
+    <string name="QQ_AppKey">KEYHGkYu6mt0gajOtkv</string>
+    <string name="QQ_Scope">get_user_info,get_simple_userinfo</string>
+    
+    <!-- weichat -->
+    <string name="Wechat_AppId">wx4fe4f4dc50342a2c</string>
+    
+    
+</resources>

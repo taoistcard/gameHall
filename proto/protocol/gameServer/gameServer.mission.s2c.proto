@@ -1,0 +1,92 @@
+package gameServer.mission.s2c;
+
+//胜利类型任务奖励及次数回包
+message userWinTaskCalc {						//0x010800
+	required int32				dwUserID			= 1;		//用户 I D
+	required int32				lResultCode			= 2;		//操作代码
+	required string				szDescribeString	= 3;		//描述消息
+	required int32				wAwardTypeComboWin	= 4;		//奖励类型	连胜奖励类型     没有达成时为0   
+	required int32				wAwardTypeWin		= 5;		//奖励类型	每胜10局奖励类型 没有达成时为0   
+	required int32				dwComboWinCount		= 6;		//当前连胜数                                     
+	required int32				dwWinCount			= 7;		//当前赢的次数   
+}
+
+
+
+// 礼券开奖
+message VoucherDrawing							//0x010801
+{
+	required int32				dwUserID		= 1;		//用户 I D
+	required int32				lResultCode		= 2;		//操作代码
+	required string				szDescribeString	= 3;		//描述消息
+	required int32				dwTotalVoucherCount	= 4;		//礼券池数量
+	required int32				cbAwardItemType		= 5;		//开奖类型 1: 金币  2: 礼券
+	required int32				dwAwardItemCount	= 6;		//奖励数量
+	required int32				wAwardType		= 7;		//奖励类型
+}
+
+// 查询池中礼券数量
+message QueryVoucherCount 						//0x010802
+{
+	required int64				lVoucherInPoolCount	= 1;		// 池中礼券数量
+	required int32				dwVoucherPoolType	= 2;		// 礼券池类型 1:斗地主 2:牛牛
+}
+
+// 礼券投注
+message VoucherBetting							//0x010803
+{
+	required int32				dwUserID		= 1;		//用户 I D
+	required int64				lBettingScore		= 2;		//投注花费
+	required int32				lResultCode		= 3;		//操作代码
+	required string				szDescribeString	= 4;		//描述消息
+}
+
+
+
+//最新礼券中奖玩家
+message NearlyDrawedUser
+{
+	required int32							dwUserID		= 1;		// UserID
+	required int32							wFaceID			= 2;		// 头像
+	required int32							cbMemberOrder		= 3;		// 会员 
+	required string							szNickName		= 4;		// 昵称
+	required string							szUesrHeadFileName	= 5;		// 自定义头像
+	required int32							wGameType		= 6;		// 游戏类型  1:斗地主 
+	required int32							dwAwardItemCount	= 7;		// 礼券数量
+	required string							szTokenID		= 8;		// TokenID
+}
+
+//最新礼券中奖玩家查询
+message NearlyDrawedUserList				//0x010804
+{
+	repeated NearlyDrawedUser				arrUserList		= 1 ;		//最新礼券中奖玩家列表
+}
+
+//玩家中奖次数
+message UserDrawedCount
+{
+	required int32							wAwardType		= 1;		// 开奖的类型
+	required int32							wCount			= 2;		// 对应的次数
+}
+
+//玩家中奖次数
+message UserDrawedCountList					//0x010805
+{
+	required int32							dwUserID		= 1;		//用户 I D
+	required int32							wGameType		= 2;		//游戏类型  1:斗地主 
+	required int32							wWealthType		= 3;		//财富类型  1:金币 16:欢乐豆场
+	repeated UserDrawedCount				arrDrawedCountList	= 4;		//玩家中奖次数列表
+}
+
+
+// 胜利类型任务奖励及次数回包
+message MissionCountInfo					//0x010806
+{
+	required int32				dwUserID		= 1;		//用户 I D
+	required int32				lResultCode		= 2;		//操作代码
+	required string				szDescribeString	= 3;		//描述消息
+	required int32				wAwardTypeComboWin	= 4;		//奖励类型	连胜奖励类型     没有达成时为0   
+	required int32				wAwardTypeWin		= 5;		//奖励类型	每胜10局奖励类型 没有达成时为0   
+	required int32				dwComboWinCount		= 6;		//当前连胜数                                     
+	required int32				dwWinCount		= 7;		//当前赢的次数                                   
+}

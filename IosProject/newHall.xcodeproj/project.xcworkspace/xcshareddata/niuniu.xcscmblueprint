@@ -1,0 +1,35 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261" : {
+
+    },
+    "613cec36-3469-4756-9e01-9be97cdffae1++3559" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261" : 0,
+    "613cec36-3469-4756-9e01-9be97cdffae1++3559" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "78F5CAD4-D622-4EB8-8132-849BE852A4BB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261" : "client\/",
+    "613cec36-3469-4756-9e01-9be97cdffae1++3559" : "..\/98Platform"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "niuniu",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/Hall\/frameworks\/niuniu-src\/proj.ios_mac\/niuniu.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.188\/ios_chestnut",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "613cec36-3469-4756-9e01-9be97cdffae1++3559"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.188\/cocos_games",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73f44161-210b-4ddd-bc88-f67fc1ffe12a++6261"
+    }
+  ]
+}

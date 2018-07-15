@@ -1,0 +1,9 @@
+<resources>
+    <string name="_98_toast_network_timeout">亲，您的网络不给力啊，检查一下吧！</string>
+    <string name="_98_toast_network_error">亲，您的网络异常，检查一下吧！</string>
+    <string name="_98_error_exception">亲，程序遭遇不明飞行物袭击，重启下吧！</string>
+    <string name="_98_toast_login_first">亲，请先登录！</string>
+    <string name="_98_btn_ok">确定</string>
+    <string name="_98_app_info">2b2c6eabf0859855c057038544da3f3b60f07f6acd229ddf0607e2e709dc2a74dbf5c6b14dfdb722</string>
+    
+</resources>

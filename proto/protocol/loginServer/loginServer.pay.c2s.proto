@@ -1,0 +1,38 @@
+package loginServer.pay.c2s;
+
+// 0x000500
+message QueryPayOrderItem
+{
+}
+
+// 0x000501
+message QueryFreeScore
+{
+}
+
+// 0x000502
+message GetFreeScore
+{
+}
+
+// 0x000503
+message QueryVipFreeScore
+{
+}
+
+// 0x000504
+message GetVipFreeScore
+{
+	optional int32 memberType = 1;		//vip
+}
+
+// 0x000505
+message GetGiftScore
+{
+	optional int64 gift = 1;			//
+}
+
+// 0x000506
+message QueryVipInfo
+{
+}

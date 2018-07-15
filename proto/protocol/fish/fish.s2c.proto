@@ -1,0 +1,131 @@
+package fish.s2c;
+
+message UserFire									// 0x020000
+{
+	required int32 bulletKind=1;
+	required int32 bulletID=2;
+	required int32 chairID=3;
+	required float angle=4;
+	required int32 bulletMultiple=5;
+	required int32 lockFishID=6;
+}
+
+message SceneEnd									// 0x020002
+{
+}
+
+message Item {
+	required int32 fishID=1;
+	required int32 fishKind=2;
+}
+
+message SwitchScene									// 0x020003
+{
+	required uint32 sceneKind=1;
+	repeated Item fishList=2;
+}
+
+// 美人鱼的衣服
+message Mermaid										// 0x020004
+{
+	required uint32 clothesID=1;
+}
+
+message FishItem 
+{
+	required int32 kind=1;
+	required int32 multiple=2;
+	required int32 speed=3;
+	required int32 boundingBoxWidth=4;
+	required int32 boundingBoxHeight=5;
+}
+
+message BulletItem 
+{
+	required int32 kind=1;
+	required int32 speed=2;
+}
+
+message GameConfig									// 0x020005
+{
+	required int32 bulletMultipleMin=1;
+	required int32 bulletMultipleMax=2;
+	required int32 bombRangeWidth=3;
+	required int32 bombRangeHeight=4;
+	repeated FishItem fishList=5;
+	repeated BulletItem bulletList=6;
+}
+
+message ScoreItem
+{
+	required int32 chairID=1;
+	required int64 fishScore=2;
+}
+
+message GameScene									// 0x020006
+{
+	required bool isSpecialScene=1;
+	repeated ScoreItem scoreList=2;
+	optional int32 specialSceneLeftTime=3;
+}
+
+message ExchangeFishScore							// 0x020007
+{
+	required uint32 chairID=1;
+	required int64 fishScore=2;
+} 
+
+message CatchSweepFish								// 0x020009
+{
+	required int32 chairID=1;
+	required int32 fishID=2;
+}
+
+
+message TreasureBox									// 0x02000A
+{
+	required int32 fishID=1;
+	required int32 chairID=2;
+	optional int32 present=3;						//奖牌
+	optional int32 score=4;
+}
+
+message CatchFish									// 0x02000B
+{
+	required int32 chairID=1;
+	required int32 fishID=2;
+	required int32 fishKind=3;
+	required int64 fishScore=5;
+	required int32 fishMulti=6;
+}
+
+message CatchSweepFishResult						// 0x02000C
+{
+	required int32 chairID=1;
+	required int32 sweepID=2;
+	required int64 fishScore=3;
+	required int32 fishMulti=4;
+	repeated int32 fishIDList=5;
+}
+
+message LockTimeout									// 0x02000D
+{
+}
+
+message BulletCompensate							// 0x02000E
+{
+	required int32 chairID=1;
+	required int64 compensateScore=2;
+}
+
+message SpawnItem
+{
+	required int32 fishKind=1;
+	required int32 fishID=2;
+	required int32 pathID=3;
+}
+
+message FishSpawn									// 0x020010
+{
+	repeated SpawnItem list=1;
+}

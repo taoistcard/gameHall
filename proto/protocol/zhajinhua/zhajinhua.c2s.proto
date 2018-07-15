@@ -1,0 +1,19 @@
+package zhajinhua.c2s;
+//用户发送的协议主协议号为200
+//用户加注
+message CMD_C_AddScore_Pro					//0x050000
+{
+	required int64 lScore = 1;//加注数目
+	required int32 wState = 2;//当前状态
+}
+
+//比牌数据包
+message CMD_C_CompareCard_Pro				//0x050003
+{	
+	required int32 wCompareUser	= 1;//比牌用户
+}
+
+//通用协议，用于客户端无内容请求
+//0x050002放弃消息,0x050004看牌消息,0x050005开牌消息,0x050006等待比牌,0x050007完成动画,0x050008用户亮牌
+message CMD_C_Common_Pro
+{}

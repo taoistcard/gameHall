@@ -1,0 +1,41 @@
+package loginServer.ranking.s2c;
+
+message WealthRanking							//0x000400
+{
+	message Item {
+		required uint32 userID=1;				//用户 I D
+		required int32 faceID=2;				//头像标识
+		required int32 gender=3;				//用户性别
+		required string	nickName=4;			//用户昵称
+		required int64 medal=5;					//用户奖牌
+		required int64 loveLiness=6;			//用户魅力
+		required int64 score=7;					//用户金币
+		required int64 gift=8;					//礼券数
+		optional string	signature=9;			//个性签名
+		optional int32	experience=10;			//经验值
+		optional int32	platformID=11;			//平台id
+		optional int32	memberOrder=12;			//vip等级
+		optional string platformFace=13;		//自定义头像
+	}
+	repeated Item list=1;
+}
+
+message LoveLinesRanking					//0x000401 魅力排行
+{
+	message Item {
+		required uint32 userID=1;				//用户 I D
+		required int32 faceID=2;				//头像标识
+		required int32 gender=3;				//用户性别
+		required string	nickName=4;			//用户昵称
+		required int64 medal=5;					//用户奖牌
+		required int64 loveLiness=6;			//用户魅力
+		required int64 score=7;					//用户金币
+		required int64 gift=8;					//礼券数
+		optional string	signature=9;			//个性签名
+		optional int32	experience=10;			//经验值
+		optional int32	platformID=11;			//平台id
+		optional int32	memberOrder=12;			//vip等级
+		optional string platformFace=13;		//自定义头像
+	}
+	repeated Item list=1;
+}

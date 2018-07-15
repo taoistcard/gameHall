@@ -1,0 +1,16 @@
+package loginServer.match.c2s;
+
+message matchSignUp			//0x000900
+{
+	required int32 ServerID=1;//报名serverid
+}
+
+message queryMatchServerInfo			//0x000902
+{
+	repeated int32 ServerID=1;//serverid
+}
+
+message cancleSignUp				//0x000903 取消报名
+{
+	required int32 ServerID=1;
+}

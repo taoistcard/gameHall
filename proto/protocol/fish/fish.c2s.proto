@@ -1,0 +1,35 @@
+package fish.c2s;
+
+message UserFire									// 0x020000
+{
+	required int32 bulletKind=1 [default=-1];
+	required int32 bulletID=2;
+	required float angle=3 [default=-1];
+	required int32 bulletMultiple=4;
+	required int32 lockFishID=5;
+}
+
+message BigNetCatchFish								// 0x020008
+{
+	required int32 bulletID=1;
+	repeated int32 catchFishIDList=2;
+}
+
+
+message CatchSweepFish								// 0x02000C
+{
+	required int32 chairID=1;
+	required int32 sweepID=2;
+	repeated int32 fishIDList=3;
+}
+
+message BigNetCatchFishAndroid						// 0x02000F
+{
+	enum AndroidType {
+		AT_RANDOM = 0;
+		AT_BIGFISH = 1;
+	}
+
+	required int32 bulletID=1;
+	required AndroidType androidType=2;
+}

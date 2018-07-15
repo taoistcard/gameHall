@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "73f44161-210b-4ddd-bc88-f67fc1ffe12a",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E717C31F-1F32-4A51-9184-B8761AF23F3E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "73f44161-210b-4ddd-bc88-f67fc1ffe12a" : "cocos_games\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ZhajinhuaGame",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "client\/trunk\/NewHall\/IosProject\/ZhajinhuaGame.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.188\/cocos_games",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73f44161-210b-4ddd-bc88-f67fc1ffe12a"
+    }
+  ]
+}

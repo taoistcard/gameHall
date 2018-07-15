@@ -1,0 +1,225 @@
+package errendoudizhu.s2c;
+
+//////////////////////////////////////////////////////////////////////////////////
+//状态定义
+//空闲状态
+message CMD_S_StatusFree_Pro
+{
+	//游戏属性
+	required int64							lCellScore		=1;			//基础积分
+
+	//时间信息
+	required int32							cbTimeOutCard		=2;			//出牌时间
+	required int32							cbTimeCallScore		=3;			//叫分时间
+	required int32							cbTimeStartGame		=4;			//开始时间
+	required int32							cbTimeHeadOutCard	=5;			//首出时间
+	required int32							cbTimeFarmerFirst 	=6;			//让先时间
+
+	//历史积分
+	repeated int64							lTurnScore		=7;			//积分信息
+	repeated int64							lCollectScore		=8;			//积分信息
+}
+
+//叫分状态
+message CMD_S_StatusCall_Pro
+{
+	//时间信息
+	required int32							cbTimeOutCard 		= 1;			//出牌时间
+	required int32							cbTimeCallScore 	= 2;			//叫分时间
+	required int32							cbTimeStartGame 	= 3;			//开始时间
+	required int32							cbTimeHeadOutCard 	= 4;			//首出时间
+	required int32							cbTimeFarmerFirst 	= 5;			//让先时间
+
+	//游戏信息
+	required int64							lCellScore 		= 6;			//单元积分
+	required int32							wCurrentUser 		= 7;			//当前玩家
+	required int32							cbBankerScore 		= 8;			//庄家叫分
+	repeated int32							cbScoreInfo 		= 9;			//叫分信息
+	repeated int32							cbHandCardData 		= 10;			//手上扑克
+	required int32							cbRobTimes		= 11;			//抢地主次数
+	
+	//历史积分
+	repeated int64							lTurnScore 		= 12;			//积分信息
+	repeated int64							lCollectScore 		= 13;			//积分信息
+}
+
+//让先状态
+message CMD_S_StatusFirst_Pro
+{
+	//时间信息
+	required int32							cbTimeOutCard 		= 1;			//出牌时间
+	required int32							cbTimeCallScore 	= 2;			//叫分时间
+	required int32							cbTimeStartGame 	= 3;			//开始时间
+	required int32							cbTimeHeadOutCard 	= 4;			//首出时间
+	required int32							cbTimeFarmerFirst 	= 5;			//让先时间
+
+	//游戏信息
+	required int64							lCellScore 		= 6;			//单元积分
+	required int32							wCurrentUser 		= 7;			//当前玩家
+	required int32							cbBankerScore 		= 8;			//庄家叫分
+	repeated int32							cbScoreInfo 		= 9;			//叫分信息
+	repeated int32							cbHandCardData 		= 10;			//手上扑克
+	required int32							cbRobTimes		= 11;			//抢地主次数
+	repeated int32							cbBankerCard 		= 12;			//游戏底牌
+	required int32							cbBankerCardType	= 13;			//游戏底牌类型
+	required int32							cbBankerCardTimes	= 14;			//游戏底牌倍数
+	required int32							wBankerUser 		= 15;			//庄家用户
+	//历史积分
+	repeated int64							lTurnScore 		= 16;			//积分信息
+	repeated int64							lCollectScore 		= 17;			//积分信息
+}
+
+//游戏状态
+message CMD_S_StatusPlay_Pro
+{
+	//时间信息
+	required int32							cbTimeOutCard 		= 1;			//出牌时间
+	required int32							cbTimeCallScore 	= 2;			//叫分时间
+	required int32							cbTimeStartGame 	= 3;			//开始时间
+	required int32							cbTimeHeadOutCard 	= 4;			//首出时间
+	required int32							cbTimeFarmerFirst 	= 5;			//让先时间
+
+	//游戏变量										    
+	required int64							lCellScore 			= 6;			//单元积分
+	required int32							cbBombCount 		= 7;			//炸弹次数
+	required int32							wBankerUser 		= 8;			//庄家用户
+	required int32							wCurrentUser 		= 9;			//当前玩家
+	required int32							cbBankerScore 		= 10;			//庄家叫分
+												    
+	//出牌信息										    
+	required int32							wTurnWiner 			= 11;			//胜利玩家
+	required int32							cbTurnCardCount 	= 12;			//出牌数目
+	repeated int32							cbTurnCardData 		= 13;			//出牌数据
+
+	//扑克信息
+	repeated int32							cbBankerCard 		= 14;			//游戏底牌
+	repeated int32							cbHandCardData 		= 15;			//手上扑克
+	repeated int32							cbHandCardCount 	= 16;			//扑克数目
+
+	//历史积分
+	repeated int64							lTurnScore 			= 17;			//积分信息
+	repeated int64							lCollectScore 		= 18;			//积分信息
+
+	required int32							cbIsFarmerFirst 	= 19;			//是否已让先
+	required int32							cbBankerCardType	= 20;			//游戏底牌类型
+	required int32							cbBankerCardTimes	= 21;			//游戏底牌倍数
+	required int32							cbRobTimes			= 22;			//抢地主次数
+
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+//命令定义 S-C
+message CMD_S_BaseScore_Pro
+{
+	required int64							lCellScore 		= 1;			//单元积分  
+}
+
+
+//发送扑克
+message CMD_S_GameStart_Pro
+{
+	required int32							wStartUser 		= 1;			//开始玩家
+	required int32				 			wCurrentUser 		= 2;			//当前玩家
+	required int32							cbValidCardData 	= 3;			//明牌扑克
+	required int32							cbValidCardIndex 	= 4;			//明牌位置
+	repeated int32							cbCardData 		= 5;			//扑克列表
+}
+
+//手上扑克数据包
+message CardData
+{
+	required int32							wChairID=1;					//椅子ID
+	repeated int32							cbCardValue=2;					//牌信息
+}
+//机器人扑克
+message CMD_S_AndroidCard_Pro
+{
+	repeated CardData						cbHandCard		= 1;			//手上扑克
+	required int32							wCurrentUser		= 2;			//当前玩家
+	repeated int32							cbBankerCard		= 3;			//庄家扑克
+}
+
+//用户叫/抢地主
+message CMD_S_CallScore_Pro
+{
+	required int32				 			wCurrentUser 		= 1;			//下一轮谁到叫地主
+	required int32							wCallScoreUser 		= 2;			//当前叫分玩家
+	required int32							cbCurrentScore 		= 3;			//当前倍数
+	required int32							cbUserCallScore		= 4;			//这一把是否 叫/抢 (地主)
+	required int32							cbRobTimes		= 5;			//抢地主次数
+}
+
+//庄家信息
+message CMD_S_BankerInfo_Pro
+{
+	required int32				 			wBankerUser 		= 1;			//庄家玩家
+	required int32				 			wCurrentUser 		= 2;			//当前玩家
+	required int32							cbBankerScore 		= 3;			//庄家叫分
+	repeated int32							cbBankerCard 		= 4;			//庄家扑克
+	required int32							cbBankerCardType	= 5;			//庄家扑克类型 0:其它(通常不会出现)  1:其它  2:单王  3:对2  4:顺子  5:同花  6:三条  7:全小 ALL<=9  8:双王
+	required int32							cbBankerCardTimes	= 6;			//庄家扑克倍数
+}
+
+//用户出牌
+message CMD_S_OutCard_Pro
+{
+	required int32							cbCardCount 		= 1;			//出牌数目
+	required int32				 			wCurrentUser 		= 2;			//当前玩家
+	required int32							wOutCardUser 		= 3;			//出牌玩家
+	repeated int32							cbCardData 		= 4;			//扑克列表
+}
+
+//放弃出牌
+message CMD_S_PassCard_Pro
+{
+	required int32							cbTurnOver 		= 1;			//一轮结束
+	required int32				 			wCurrentUser 		= 2;			//当前玩家
+	required int32				 			wPassCardUser 		= 3;			//放弃玩家
+}												  
+
+//游戏结束
+message CMD_S_GameConclude_Pro
+{
+	//积分变量
+	optional int64							lCellScore 		= 1;			//单元积分
+	repeated int64							lGameScore 		= 2;			//游戏积分
+
+	//春天标志
+	optional int32							bChunTian 		= 3;			//春天标志
+	optional int32							bFanChunTian 		= 4;			//春天标志
+
+	//炸弹信息
+	optional int32							cbBombCount 		= 5;			//炸弹个数
+	repeated int32							cbEachBombCount		= 6;			//炸弹个数
+
+	//游戏信息
+	optional int32							cbBankerScore 		= 7;			//叫分数目
+	repeated int32							cbCardCount 		= 8;			//扑克数目
+	repeated int32							cbHandCardData 		= 9;			//扑克列表
+
+	optional int32							cbHasMissile 		= 10;			//是否有火箭
+}
+
+//托管
+message CMD_S_TuoGuan_Pro
+{
+	repeated int32							bTuoGuan 		= 1;			//托管状态 1表示托管、0表示未托管
+}
+
+//让先
+message CMD_S_FarmerFirst_Pro
+{
+	required int32							bFarmerFirst 		= 1;			//让先状态 1表示让先、0表示未让先
+	required int32				 			wCurrentUser 		= 2;			//当前玩家
+	required int32				 			wCheckCardCount 	= 3;			//让先张数
+}
+
+//当前操作时间
+message CMD_S_GameClock_Pro
+{
+	required int64							lTimeLeft 		= 1;			//剩余时间（秒）
+}
+
+//通用协议，用于服务端无内容返回
+message CMD_S_Common_Pro {}

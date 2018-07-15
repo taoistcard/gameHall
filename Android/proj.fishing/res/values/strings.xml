@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">欢乐捕鱼</string>
+    <string name="channel">a_01</string>
+    <string name="channel_name">Test Channel</string>
+    <string name="AppId">1038</string>
+    <string name="AppKey">77970b9494ab4a56a6d82012eeca13da</string>
+    <string name="AppServer">1</string>
+    
+    <!--UMeng  -->
+    <string name="UMENG_APPKEY">5694bf2567e58e8aa50019b4</string>
+    <string name="UMENG_CHANNEL">a_19</string>
+    <string name="UMENG_MESSAGE_SECRET">bb18d670cb531161ea329fdc28e064fc</string>
+       
+    
+    <!--Tecent -->
+    <string name="QQ_AppId">1104678578</string>
+    <string name="QQ_AppKey">fg89ghDDtD5nE4L7</string>
+    <string name="QQ_Scope">get_user_info,get_simple_userinfo</string>
+    
+    <!-- weichat -->
+    <string name="Wechat_AppId">wx4fe4f4dc50342a2c</string>
+    
+    
+</resources>
